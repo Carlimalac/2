@@ -1,0 +1,146 @@
+/* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(90deg, #FFD1DC, #D1FFD8, #D1D8FF, #FFD1F5);
+  background-size: 300% 300%;
+  animation: gradientShift 8s ease infinite;
+  overflow: hidden;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 80%;
+  max-width: 1200px;
+  gap: 20px;
+}
+
+.sidebar {
+  background-color: #fff;
+  padding: 20px;
+  border: 3px solid #40E0D0;
+  border-radius: 10px;
+  width: 25%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  font-size: 18px;
+  margin-bottom: 5px; /* Decreased space below the label */
+  font-weight: lighter;
+}
+
+button {
+  background-color: #FF89A3; /* Darker light pink */
+  color: white;
+  border: none;
+  padding: 10px;
+  margin: 10px 0;
+  cursor: pointer;
+  border-radius: 5px;
+  font-weight: lighter;
+  font-size: 16px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background-color: #FF7C92; /* Even darker pink on hover */
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+button:active {
+  background-color: #FF6C81; /* Darkest pink when clicked */
+}
+
+.drawing-area {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+canvas {
+  border: 3px solid #40E0D0;
+  background-color: white;
+  border-radius: 5px;
+  cursor: crosshair;
+  max-width: 100%;
+  height: auto;
+}
+
+input[type="range"] {
+  width: 100%;
+  margin: 10px 0; /* Further reduced space between stroke label and slider */
+}
+
+input[type="color"] {
+  margin-top: 10px; /* Added some margin above the color box */
+  margin-bottom: 20px; /* Keeping some margin below the color picker */
+}
+
+.footer {
+  margin-top: 15px;
+  font-size: 14px;
+  font-weight: lighter;
+  color: #555;
+  text-align: center;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+  body {
+    height: auto;
+    padding: 20px;
+    overflow: auto;
+  }
+
+  .container {
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+  }
+
+  .sidebar {
+    width: 90%;
+    margin-bottom: 20px;
+  }
+
+  canvas {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  h2 {
+    font-size: 16px;
+  }
+
+  button {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .footer {
+    font-size: 12px;
+  }
+}
