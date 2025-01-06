@@ -8,14 +8,16 @@ let lastX, lastY;
 // Event listeners for drawing
 canvas.addEventListener('mousedown', (e) => {
   drawing = true;
-  lastX = e.offsetX;
-  lastY = e.offsetY;
+  const rect = canvas.getBoundingClientRect();
+  lastX = e.clientX - rect.left;
+  lastY = e.clientY - rect.top;
 });
 
 canvas.addEventListener('mousemove', (e) => {
   if (drawing) {
-    const currentX = e.offsetX;
-    const currentY = e.offsetY;
+    const rect = canvas.getBoundingClientRect();
+    const currentX = e.clientX - rect.left;
+    const currentY = e.clientY - rect.top;
     drawLine(lastX, lastY, currentX, currentY);
     lastX = currentX;
     lastY = currentY;
