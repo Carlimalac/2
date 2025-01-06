@@ -25,11 +25,12 @@ body {
 
 .container {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; /* Equal space between sidebar and canvas */
   align-items: flex-start;
-  width: 80%;
-  max-width: 1200px;
-  gap: 20px;
+  width: 100%; /* Full width of the screen */
+  max-width: 1200px; /* Max width of the container */
+  gap: 20px; /* Gap between sidebar and canvas */
+  margin: 0 auto; /* Auto margin for centering */
 }
 
 .sidebar {
@@ -37,18 +38,18 @@ body {
   padding: 20px;
   border: 3px solid #40E0D0;
   border-radius: 10px;
-  width: 25%;
+  width: 25%; /* Adjust width of the sidebar */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 h2 {
   font-size: 18px;
-  margin-bottom: 5px; /* Decreased space below the label */
+  margin-bottom: 5px;
   font-weight: lighter;
 }
 
 button {
-  background-color: #FF89A3; /* Darker light pink */
+  background-color: #FF89A3;
   color: white;
   border: none;
   padding: 10px;
@@ -62,12 +63,12 @@ button {
 }
 
 button:hover {
-  background-color: #FF7C92; /* Even darker pink on hover */
+  background-color: #FF7C92;
   box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
 }
 
 button:active {
-  background-color: #FF6C81; /* Darkest pink when clicked */
+  background-color: #FF6C81;
 }
 
 .drawing-area {
@@ -76,6 +77,7 @@ button:active {
   flex-direction: column;
   align-items: center;
   position: relative;
+  width: 75%; /* Adjust width of the drawing area */
 }
 
 canvas {
@@ -84,17 +86,17 @@ canvas {
   border-radius: 5px;
   cursor: crosshair;
   max-width: 100%;
-  height: auto;
+  height: 400px; /* Fixed height for the canvas */
 }
 
 input[type="range"] {
   width: 100%;
-  margin: 10px 0; /* Further reduced space between stroke label and slider */
+  margin: 10px 0;
 }
 
 input[type="color"] {
-  margin-top: 10px; /* Added some margin above the color box */
-  margin-bottom: 20px; /* Keeping some margin below the color picker */
+  margin-top: 10px;
+  margin-bottom: 20px;
 }
 
 .footer {
@@ -117,16 +119,17 @@ input[type="color"] {
     flex-direction: column;
     width: 100%;
     align-items: center;
+    margin: 0 auto; /* Ensure the container is centered */
   }
 
   .sidebar {
-    width: 90%;
+    width: 90%; /* Sidebar takes most of the width on mobile */
     margin-bottom: 20px;
   }
 
   canvas {
-    width: 100%;
-    height: auto;
+    width: 90%;
+    height: 400px;
   }
 }
 
