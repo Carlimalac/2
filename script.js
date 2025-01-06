@@ -5,37 +5,47 @@ let color = '#40E0D0'; // Default turquoise color
 let strokeSize = 3; // Default stroke size
 let lastX, lastY;
 
-// Event listeners for drawing on mouse and touch devices
-function startDrawing(e) {
-  drawing = true;
-  lastX = e.offsetX || e.touches[0].offsetX; // Use touch offset if it's a touch event
-  lastY = e.offsetY || e.touches[0].offsetY;
+// Function to get correct mouse or touch position relative to the canvas
+function getPosition(e) {
+  const rect = canvas.getBoundingClientRect(); // Get the position of the canvas in the viewport
+  const x = (e.clientX || e.touches[0].clientX) - rect.left; // Adjust for the canvas offset
+  const y = (e.clientY || e.touches[0].clientY) - rect.top;
+  return { x, y };
 }
 
+// Start drawing
+function startDrawing(e) {
+  drawing = true;
+  const { x, y } = getPosition(e);
+  lastX = x;
+  lastY = y;
+}
+
+// Draw on the canvas
 function draw(e) {
   if (drawing) {
-    const currentX = e.offsetX || e.touches[0].offsetX;
-    const currentY = e.offsetY || e.touches[0].offsetY;
-    drawLine(lastX, lastY, currentX, currentY);
-    lastX = currentX;
-    lastY = currentY;
+    const { x, y } = getPosition(e);
+    drawLine(lastX, lastY, x, y);
+    lastX = x;
+    lastY = y;
   }
 }
 
+// Stop drawing
 function stopDrawing() {
   drawing = false;
   ctx.beginPath(); // Reset the path
 }
 
-// Handle mouse events
+// Mouse events
 canvas.addEventListener('mousedown', startDrawing);
 canvas.addEventListener('mousemove', draw);
 canvas.addEventListener('mouseup', stopDrawing);
 canvas.addEventListener('mouseout', stopDrawing);
 
-// Handle touch events
+// Touch events (for mobile devices)
 canvas.addEventListener('touchstart', (e) => {
-  e.preventDefault(); // Prevent default touch behavior
+  e.preventDefault(); // Prevent default touch behavior like zooming
   startDrawing(e);
 });
 canvas.addEventListener('touchmove', (e) => {
