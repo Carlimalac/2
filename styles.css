@@ -126,7 +126,11 @@ input[type="color"] {
 
   canvas {
     width: 100%;
-    height: auto;
+    height: 300px; /* Set a specific height for smaller screens */
+  }
+
+  input[type="range"], input[type="color"], button {
+    width: 100%; /* Full width for smaller screens */
   }
 }
 
