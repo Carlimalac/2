@@ -5,7 +5,7 @@ let color = '#40E0D0'; // Default turquoise color
 let strokeSize = 3; // Default stroke size
 let lastX, lastY;
 
-// Function to get correct mouse or touch position relative to the canvas
+// Function to get the correct mouse or touch position relative to the canvas
 function getPosition(e) {
   const rect = canvas.getBoundingClientRect(); // Get the position of the canvas in the viewport
   const x = (e.clientX || e.touches[0].clientX) - rect.left; // Adjust for the canvas offset
