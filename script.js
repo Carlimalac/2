@@ -5,7 +5,7 @@ let color = '#40E0D0'; // Default turquoise color
 let strokeSize = 3; // Default stroke size
 let lastX, lastY;
 
-// Event listeners for mouse events (for desktop)
+// Event listeners for mouse events (desktop)
 canvas.addEventListener('mousedown', (e) => {
   drawing = true;
   lastX = e.offsetX;
@@ -32,9 +32,9 @@ canvas.addEventListener('mouseout', () => {
   ctx.beginPath(); // Reset the path when mouse leaves canvas
 });
 
-// Event listeners for touch events (for mobile)
+// Event listeners for touch events (mobile)
 canvas.addEventListener('touchstart', (e) => {
-  e.preventDefault();
+  e.preventDefault(); // Prevent default scrolling
   drawing = true;
   const touch = e.touches[0];
   lastX = touch.clientX - canvas.getBoundingClientRect().left;
@@ -42,7 +42,7 @@ canvas.addEventListener('touchstart', (e) => {
 });
 
 canvas.addEventListener('touchmove', (e) => {
-  e.preventDefault();
+  e.preventDefault(); // Prevent default scrolling
   if (drawing) {
     const touch = e.touches[0];
     const currentX = touch.clientX - canvas.getBoundingClientRect().left;

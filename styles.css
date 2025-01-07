@@ -88,11 +88,6 @@ canvas {
   height: auto;
 }
 
-input[type="range"] {
-  width: 100%;
-  margin: 10px 0;
-}
-
 /* Fixing color picker to be a smaller square without borders */
 input[type="color"] {
   width: 30px;  /* Smaller width */
