@@ -43,12 +43,12 @@ body {
 
 h2 {
   font-size: 18px;
-  margin-bottom: 5px;
+  margin-bottom: 5px; /* Decreased space below the label */
   font-weight: lighter;
 }
 
 button {
-  background-color: #FF89A3;
+  background-color: #FF89A3; /* Darker light pink */
   color: white;
   border: none;
   padding: 10px;
@@ -62,12 +62,12 @@ button {
 }
 
 button:hover {
-  background-color: #FF7C92;
+  background-color: #FF7C92; /* Even darker pink on hover */
   box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
 }
 
 button:active {
-  background-color: #FF6C81;
+  background-color: #FF6C81; /* Darkest pink when clicked */
 }
 
 .drawing-area {
@@ -89,12 +89,12 @@ canvas {
 
 input[type="range"] {
   width: 100%;
-  margin: 10px 0;
+  margin: 10px 0; /* Further reduced space between stroke label and slider */
 }
 
 input[type="color"] {
-  margin-top: 10px;
-  margin-bottom: 20px;
+  margin-top: 10px; /* Added some margin above the color box */
+  margin-bottom: 20px; /* Keeping some margin below the color picker */
 }
 
 .footer {
@@ -105,26 +105,39 @@ input[type="color"] {
   text-align: center;
 }
 
-/* Mobile Message */
-.mobile-message {
-  display: none; /* Hide by default */
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  font-family: 'Arial', sans-serif;
-  font-size: 24px;
-  color: #40E0D0;
-}
-
-/* Show the message and hide canvas on mobile */
+/* Hide canvas and sidebar in mobile version and show the message */
 @media (max-width: 768px) {
   .container {
-    display: none; /* Hide the canvas and sidebar on mobile */
+    display: none; /* Hide canvas and sidebar */
+  }
+  
+  .desktop-message {
+    display: block; /* Show the message on mobile */
+    font-size: 20px;
+    font-weight: bold;
+    color: #40E0D0;
+    text-align: center;
+    padding: 50px;
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  h2 {
+    font-size: 16px;
   }
 
-  .mobile-message {
-    display: block; /* Show the mobile message on mobile */
+  button {
+    font-size: 14px;
+    padding: 8px;
   }
+
+  .footer {
+    font-size: 12px;
+  }
+}
+
+/* Initially hide the message, so it's not visible on desktop */
+.desktop-message {
+  display: none;
 }
