@@ -39,7 +39,6 @@ body {
   border-radius: 10px;
   width: 25%;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  flex-shrink: 0; /* Prevent sidebar from shrinking */
 }
 
 h2 {
@@ -84,8 +83,8 @@ canvas {
   border-radius: 5px;
   cursor: crosshair;
   max-width: 100%;
-  height: 400px; /* Keep a reasonable size for desktop */
-  width: 600px; /* Fixed width on desktop */
+  height: 400px;
+  width: 600px;
 }
 
 input[type="range"] {
@@ -122,8 +121,8 @@ input[type="color"] {
   }
 
   canvas {
-    width: 100%; /* Canvas takes full width of the container */
-    height: auto; /* Keeps aspect ratio intact */
+    width: 100%;
+    height: auto;
   }
 
   input[type="range"], input[type="color"], button {
@@ -145,8 +144,8 @@ input[type="color"] {
   }
 
   canvas {
-    height: 250px; /* Slightly smaller canvas for mobile */
-    width: 100%; /* Full width on smaller screens */
+    height: 250px; /* Keep the canvas at a smaller size */
+    width: 100%;
   }
 
   input[type="range"], input[type="color"], button {
