@@ -63,6 +63,7 @@ button {
 
 button:hover {
   background-color: #FF7C92;
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
 }
 
 button:active {
@@ -82,107 +83,48 @@ canvas {
   background-color: white;
   border-radius: 5px;
   cursor: crosshair;
-  width: 600px;
-  height: 400px;
   max-width: 100%;
   height: auto;
 }
 
-/* Fixing color picker to be a small square */
+input[type="range"] {
+  width: 100%;
+  margin: 10px 0;
+}
+
 input[type="color"] {
-  width: 30px;  /* Make it small */
-  height: 30px;  /* Make it square */
   margin-top: 10px;
   margin-bottom: 20px;
-  padding: 0; /* Remove padding */
-  border: none; /* Remove border */
-  background-color: transparent; /* Remove background color */
-  appearance: none; /* Remove default appearance */
 }
 
-/* Footer Text Style */
 .footer {
   margin-top: 15px;
-  font-size: 12px;
-  font-weight: normal;
+  font-size: 14px;
+  font-weight: lighter;
   color: #555;
   text-align: center;
+}
+
+/* Mobile Message */
+.mobile-message {
+  display: none; /* Hide by default */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
   font-family: 'Arial', sans-serif;
-  letter-spacing: 0.5px;
+  font-size: 24px;
+  color: #40E0D0;
 }
 
-/* RESPONSIVE DESIGN */
-
-/* Tablet and larger mobile screens */
-@media (max-width: 1024px) {
-  .container {
-    flex-direction: column;
-    width: 90%;
-    align-items: center;
-  }
-
-  .sidebar {
-    width: 80%;
-    margin-bottom: 20px;
-  }
-
-  canvas {
-    width: 100%;
-    height: auto;
-  }
-
-  input[type="range"], input[type="color"], button {
-    width: 100%;
-  }
-}
-
-/* Phones and small mobile screens */
+/* Show the message and hide canvas on mobile */
 @media (max-width: 768px) {
   .container {
-    flex-direction: column;
-    width: 90%;
-    align-items: center;
+    display: none; /* Hide the canvas and sidebar on mobile */
   }
 
-  .sidebar {
-    width: 90%;
-    margin-bottom: 20px;
-  }
-
-  canvas {
-    height: 250px;
-    width: 100%;
-  }
-
-  input[type="range"], input[type="color"], button {
-    width: 100%;
-  }
-
-  h2 {
-    font-size: 16px;
-  }
-
-  button {
-    font-size: 14px;
-    padding: 8px;
-  }
-
-  .footer {
-    font-size: 12px;
-  }
-}
-
-@media (max-width: 480px) {
-  h2 {
-    font-size: 14px;
-  }
-
-  button {
-    font-size: 12px;
-    padding: 8px;
-  }
-
-  .footer {
-    font-size: 10px;
+  .mobile-message {
+    display: block; /* Show the mobile message on mobile */
   }
 }

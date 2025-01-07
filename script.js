@@ -5,7 +5,7 @@ let color = '#40E0D0'; // Default turquoise color
 let strokeSize = 3; // Default stroke size
 let lastX, lastY;
 
-// Event listeners for mouse events (desktop)
+// Event listeners for drawing
 canvas.addEventListener('mousedown', (e) => {
   drawing = true;
   lastX = e.offsetX;
@@ -30,37 +30,6 @@ canvas.addEventListener('mouseup', () => {
 canvas.addEventListener('mouseout', () => {
   drawing = false;
   ctx.beginPath(); // Reset the path when mouse leaves canvas
-});
-
-// Event listeners for touch events (mobile)
-canvas.addEventListener('touchstart', (e) => {
-  e.preventDefault(); // Prevent default scrolling
-  drawing = true;
-  const touch = e.touches[0];
-  lastX = touch.clientX - canvas.getBoundingClientRect().left;
-  lastY = touch.clientY - canvas.getBoundingClientRect().top;
-});
-
-canvas.addEventListener('touchmove', (e) => {
-  e.preventDefault(); // Prevent default scrolling
-  if (drawing) {
-    const touch = e.touches[0];
-    const currentX = touch.clientX - canvas.getBoundingClientRect().left;
-    const currentY = touch.clientY - canvas.getBoundingClientRect().top;
-    drawLine(lastX, lastY, currentX, currentY);
-    lastX = currentX;
-    lastY = currentY;
-  }
-});
-
-canvas.addEventListener('touchend', () => {
-  drawing = false;
-  ctx.beginPath(); // Reset the path when touch ends
-});
-
-canvas.addEventListener('touchcancel', () => {
-  drawing = false;
-  ctx.beginPath(); // Reset the path if touch is canceled
 });
 
 // Draw the line
