@@ -88,27 +88,27 @@ canvas {
   height: auto;
 }
 
-/* Fixing color picker to be a smaller square without borders */
+/* Fixing color picker to be a small square */
 input[type="color"] {
-  width: 30px;  /* Smaller width */
-  height: 30px;  /* Smaller height */
+  width: 30px;  /* Make it small */
+  height: 30px;  /* Make it square */
   margin-top: 10px;
   margin-bottom: 20px;
   padding: 0; /* Remove padding */
   border: none; /* Remove border */
   background-color: transparent; /* Remove background color */
-  appearance: none; /* Remove the default appearance */
+  appearance: none; /* Remove default appearance */
 }
 
 /* Footer Text Style */
 .footer {
   margin-top: 15px;
   font-size: 12px;
-  font-weight: normal; /* Make it thinner */
+  font-weight: normal;
   color: #555;
   text-align: center;
   font-family: 'Arial', sans-serif;
-  letter-spacing: 0.5px; /* Optional: Add slight letter-spacing for a delicate feel */
+  letter-spacing: 0.5px;
 }
 
 /* RESPONSIVE DESIGN */
