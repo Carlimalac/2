@@ -1,4 +1,4 @@
-/* Basic Reset */
+
 * {
   margin: 0;
   padding: 0;
@@ -105,7 +105,7 @@ input[type="color"] {
   text-align: center;
 }
 
-/* Mobile-specific message */
+
 .mobile-message {
   display: none;
   font-size: 18px;
@@ -119,10 +119,10 @@ input[type="color"] {
 
 @media (max-width: 768px) {
   .container {
-    display: none; /* Hide the drawing area and sidebar on mobile */
+    display: none; 
   }
 
   .mobile-message {
-    display: block; /* Show message on mobile */
+    display: block; 
   }
 }
