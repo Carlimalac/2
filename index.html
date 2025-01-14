@@ -31,11 +31,11 @@
             gap: 15px;
             padding: 10px;
             background-color: rgba(255, 255, 255, 0.7);
-            position: absolute;
-            top: 0;
             width: 100%;
-            z-index: 1;
             box-sizing: border-box;
+            position: sticky; /* Fixes it to the top of the page */
+            top: 0;
+            z-index: 1;
         }
 
         .top-bar label {
@@ -57,9 +57,7 @@
             background-color: transparent;
             font-size: 16px;
             color: black;
-            position: absolute;
-            bottom: 0;
-            width: 100%;
+            margin-top: 30px; /* Ensure space between canvas and footer */
         }
 
         /* Media Queries for responsiveness */
@@ -67,8 +65,8 @@
             .top-bar {
                 flex-direction: column; /* Stack the controls vertically on mobile */
                 gap: 10px;
-                padding: 15px 0;
-                margin-top: 60px;
+                padding: 15px;
+                margin-top: 10px;
             }
 
             .top-bar label {
